@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Feliz Cumpleaños Angela</title>
+
+    <!-- IMPORTANTE PARA CELULAR -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            margin: 0;
+            background: linear-gradient(to top, #1a1a40, #4b0082);
+            font-family: 'Segoe UI', sans-serif;
+            overflow: hidden;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .tarjeta {
+            background: white;
+            width: 90%;
+            max-width: 380px;
+            padding: 25px;
+            text-align: center;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+            z-index: 2;
+        }
+
+        h1 {
+            color: #ff1493;
+            font-size: 24px;
+        }
+
+        p {
+            color: #444;
+            font-size: 16px;
+            line-height: 1.5;
+                        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        .firma {
+            margin-top: 15px;
+            font-size: 15px;
+            color: #ff1493;
+            font-weight: bold;
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 25px;
+            background: #ff1493;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:active {
+            transform: scale(0.95);
+        }
+
+        /* AUDIO OCULTO */
+        audio {
+            display: none;
+        }
+
+        /* COHETES */
+        .cohete {
+            position: absolute;
+            bottom: -50px;
+            width: 8px;
+            height: 25px;
+            background: white;
+            animation: volar 3s infinite;
+        }
+
+        .cohete::after {
+            content:  '❤️';
+            position: absolute;
+            top: -18px;
+            left: -6px;
+            font-size: 14px;
+        }
+
+        .c1 { left: 15%; animation-delay: 0s; }
+        .c2 { left: 50%; animation-delay: 1s; }
+        .c3 { left: 85%; animation-delay: 2s; }
+
+        @keyframes volar {
+            0% { transform: translateY(0); opacity: 1; }
+            100% { transform: translateY(-110vh); opacity: 0; }
+        }
+
+        /* EXPLOSIONES */
+        .explosion {
+            position: absolute;
+            font-size: 22px;
+            animation: explotar 3s infinite;
+            opacity: 0;
+        }
+
+        .e1 { left: 20%; animation-delay: 1.5s; }
+        .e2 { left: 50%; animation-delay: 2.5s; }
+        .e3 { left: 80%; animation-delay: 3.5s; }
+
+        @keyframes explotar {
+            0% { opacity: 0; transform: scale(0.5); }
+            50% { opacity: 1; transform: scale(1.4); }
+            100% { opacity: 0; transform: scale(2); }
+        }
+    </style>
+</head>
+<body>
+
+    <audio id="musica" loop>
+        <source src="musica.mp3" type="audio/mpeg">
+    </audio>
+    <!-- COHETES -->
+    <div class="cohete c1"></div>
+    <div class="cohete c2"></div>
+    <div class="cohete c3"></div>
+
+    <!-- EXPLOSIONES -->
+    <div class="explosion e1">💕💕💕</div>
+    <div class="explosion e2">💕💕💕</div>
+    <div class="explosion e3">💕💕💕</div>
+
+    <!-- TARJETA -->
+    <div class="tarjeta">
+        <h1>¡Feliz Cumpleaños, Angela! 🎂</h1>
+   <p>
+            Espero nunca dejes de ser una buena chica a pesar de los antibajos de la vida siempre te ve con ganas de seguir eres una chica maravillosa<br>
+            siempre confiare en ti y te voy a querer en un 2.000.000 %
+        </p>
+
+   
+       <p class="firma">💖✨Con cariño💖✨<br>💖✨Danilo 💖✨</p>
+
+          <center>
+<button onclick="document.getElementById('musica').play()"
+        style="padding:10px 20px; border:none; border-radius:10px;
+               background:#ff1493; color:white; font-size:16px; cursor:pointer;">
+    ▶ Activar música
+</button>
+
+    </center>
+
+    </div>
+
+</body>
+</html>
